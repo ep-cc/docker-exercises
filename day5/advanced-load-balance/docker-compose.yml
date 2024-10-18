@@ -1,0 +1,10 @@
+services:
+  server:
+    build: ./server
+    scale: 5
+  proxy:
+    build: ./proxy
+    depends_on:
+      - server
+    ports:
+      - "7000:80"
