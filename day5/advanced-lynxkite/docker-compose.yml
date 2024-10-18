@@ -1,0 +1,14 @@
+services:
+  lynxkite:
+    image: lynxkite/lynxkite
+    ports:
+      - "2200:2200"
+    environment:
+      - KITE_MASTER_MEMORY_MB=1024
+    volumes:
+      - lynxkite-meta:/metadata
+      - lynxkite-data:/data
+
+volumes:
+  lynxkite-meta:
+  lynxkite-data:
